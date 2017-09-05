@@ -21,7 +21,6 @@
 
 
 
-
         // var htmlssd = $.ajax({
         //     type: 'POST',
         //     url: urls,

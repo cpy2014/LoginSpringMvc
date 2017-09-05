@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
-    <title>Person</title>
+    <title>UserAdd</title>
 
 
     <%--<link href="..../js/jquery-3.2.1.min.js">--%>
@@ -21,25 +21,25 @@
 
 
 
-<h1>person add</h1>
-    <div>
-        <form action="toPerson" method="post">
+<h1>User add</h1>
+<div>
+    <form action="userAdd" method="post">
         <div>
-                <label>name</label>
-                <input id="name" name="name">
-            </div>
-        <div>
-                <label>age</label>
-                <input id="age" name="age">
-            </div>
-
-        <div>
-            <button type="submit" id="commitssss">commit </button>
-            <button type="button" id="resetsss">reset</button>
+            <label>name</label>
+            <input type="text" id="name" name="name"><label>${errorName}</label>
         </div>
-        </form>
+        <div>
+            <label>age</label>
+            <input type="password" id="password" name="password"><label>${errorPassword}</label>
+        </div>
 
-    </div>
+        <div>
+            <button type="submit" id="commit">commit </button>
+            <button type="reset" id="reset">reset</button>
+        </div>
+    </form>
+
+</div>
 
 
 

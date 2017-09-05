@@ -21,6 +21,21 @@
     </context:component-scan>
 
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+                <bean class="com.example.authenticate.HandlerInterceptor">
+                    <property name="excludedUrls">
+                        <list>
+                            <value>/loginHome</value>
+                            <value>/userAdd</value>
+                            <value>/login</value>
+                            <value>/js/</value>
+                        </list>
+                    </property>
+                </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
     <!--<bean id="handleMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">-->
         <!--<property name="mappings">-->
             <!--<props>-->
@@ -52,6 +67,7 @@
     <!-- 默认的视图解析器，在上面的视图解析错误时使用(默认使用html) -->
     <bean id="defaultViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="cache" value="false"/>
         <property name="prefix" value="/WEB-INF/statics/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
@@ -62,5 +78,8 @@
         <property name="defaultEncoding" value="UTF-8"/>
         <property name="resolveLazily" value="true"/>
     </bean>
+
+
+
 
 </beans>
